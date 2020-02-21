@@ -1,0 +1,23 @@
+#pragma once
+#ifndef RAYH
+#define RAYH
+
+#include "vec3.h"
+
+
+class ray
+{
+public:
+	ray() {}
+	ray(const vec3& a, const vec3& b) { A = a; B = b; }
+	vec3 origin() const { return A; }
+	vec3 direction() const { return B; }
+	vec3 ray_values(float t) const { return A + t * B; } //defines the point at parameter
+
+	vec3 A;
+	vec3 B;
+};
+
+
+#endif
+
